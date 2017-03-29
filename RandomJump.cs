@@ -1,4 +1,15 @@
-﻿using UnityEngine;
+﻿/* 
+  RandomJump.cs
+  
+Autor: André Luiz Micheletti - 2017
+
+Tipo: Script de behaviour - Unity3D
+
+Objetivo: Fazer com que o GameObject (que possui um RigidBody) pule automaticamente quando é criado
+
+*/
+
+using UnityEngine;
 using System.Collections;
 
 public class RandomJump : MonoBehaviour {
@@ -10,7 +21,6 @@ public class RandomJump : MonoBehaviour {
 
 	public float randX;
 
-	// Use this for initialization
 	void Start () {
 		body = GetComponent<Rigidbody> ();
 		float forceX = Random.Range(-randX, randX);
@@ -18,10 +28,5 @@ public class RandomJump : MonoBehaviour {
 
 		Vector3 force = new Vector3 (forceX, forceY);
 		body.velocity = force;
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-	
 	}
 }
